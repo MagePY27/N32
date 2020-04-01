@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Userdel</title>
+</head>
+<body>
+<b><a href="/hello/userlist/"><<返回用户界面</a></b>
+<form  method="post">
+    <b>删除用户{{user.user}}?</b><br>
+<!--    <a href="/hello/userdel/{{user.id}}/delete=True">Yes</a>/<a href="/hello/userlist/">No</a>-->
+    <input type="radio" name="delete" value=True>是<input type="radio" name="delete" value=False>否
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

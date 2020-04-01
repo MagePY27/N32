@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理系统</title>
+</head>
+<body>
+
+<b><a href="/hello/useradd/">添加用户</a></b>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+    {% for u in users %}
+    <tr>
+        <td>{{u.id}}</td>
+        <td>{{u.user}}</td>
+        <td>{{u.name}}</td>
+        <td>{{u.age}}</td>
+        <td>{{ u.get_sex_display }}</td>
+        <td>
+            <a href="/hello/useredit/{{u.id}}">{{ "编辑" }}</a>|
+            <a href="/hello/userdel/{{u.id}}">{{"删除"}}</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</body>
+</html>

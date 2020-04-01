@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>DevOps</title>
+</head>
+<body>
+<p>
+    {{ classname }}
+</p>
+
+    <li>{{ books.0 }}</li>
+    <li>{{ books.1 }}</li>
+    <li>{{ books.2 }}</li>
+
+<div style="background-color:yellow">hello my name is {{ user.name }} </br>
+    my age is {{ user.age }}
+</div>
+
+{% if user %}
+    <p> name:{{ user.name }}</p>
+{% else %}
+    用户不存在
+{% endif %}
+
+{% for book in books %}
+<li>{{ book }}</li>
+{% endfor %}
+
+{% for user in userlist %}
+<li>{{ user.name }}-->{{ user.age }}</li>
+{% endfor %}
+
+{% if messages|length >= 3 %}
+    You have lots of messages today!
+{% else %}
+    You have not messages today!
+{% endif %}
+<br>
+
+{{ val|default:"nothing" }} <br>
+
+{{ val|first }}<br>
+
+{{ val|last }}<br>
+
+{{ val|join:"//" }} <br>
+
+{{ val|length }} <br>
+
+{{ val|length_is:"3" }} <br>
+
+{% load static %}
+<img src={% static "img/123.jpeg" %} alt="My image" /> <br>
+
+{{ value|date:"Y-m-d" }}<br>
+
+{{ value|slice:":2" }}<br>
+
+{% load mytag %}
+<p>{{ "2" |aaa:'1' }}</p>
+
+</body>
+</html>
