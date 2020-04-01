@@ -6,8 +6,8 @@ urlpatterns = [
     # path('hello/', views.index, name='index')
     # re_path('([0-9]{4})/([0-9]{2})/', views.re_index, name='re_index'),
     # re_path('(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/', views.re_index, name='re_index')
-    path('userlist/', views.userlist, name='list'),
-    path('useradd/', views.useradd, name='add'),
-    re_path('useredit/([0-9]{1,4})/', views.useredit, name='useredit'),
-    re_path('userdel/([0-9]{1,4})', views.userdel, name='del'),
+    path('user_list/', views.user_list, name='list'),
+    path('user_add/', views.user_add, name='add'),
+    re_path('user_edit/([0-9]{1,4})/', views.user_edit, name='useredit'),
+    re_path('user_del/([0-9]{1,4})', views.user_del, name='del'),
 ]

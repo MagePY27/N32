@@ -49,26 +49,25 @@ def index(request):
                                                 "messages": messages, "val":val, "value": value})
 
 
-def userlist(request):
+def user_list(request):
     users = User.objects.all()
     return render(request, 'hello/index.html', {'users': users})
 
 
-def useradd(request):
+def user_add(request):
     u = User.objects
     try:
         if request.method == 'POST':
             # print(QueryDict(request.body).dict())
             data = QueryDict(request.body).dict()
             u.get_or_create(**data)
-    except :
-        print('此用户已存在')
+    except:
         return HttpResponse('此用户已存在')
 
     return render(request,'hello/useradd.html')
 
 
-def useredit(request, u_id):
+def user_edit(request, u_id):
     u = User.objects.get(id=u_id)
     print(u.user, u.name, u.age)
 
@@ -82,7 +81,7 @@ def useredit(request, u_id):
     return render(request, 'hello/useredit.html', {"user": u})
 
 
-def userdel(request, u_id):
+def user_del(request, u_id):
     u = User.objects.get(id=u_id)
 
     if request.POST.get('delete') == "True":

@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<b><a href="/hello/useradd/">添加用户</a></b>
+<b><a href="/hello/user_add/">添加用户</a></b>
 
 <table border="1">
     <tr>
@@ -25,8 +25,8 @@
         <td>{{u.age}}</td>
         <td>{{u.get_sex_display}}</td>
         <td>
-            <a href="/hello/useredit/{{u.id}}">{{ "编辑" }}</a>|
-            <a href="/hello/userdel/{{u.id}}">{{"删除"}}</a>
+            <a href="/hello/user_edit/{{u.id}}">{{ "编辑" }}</a>|
+            <a href="/hello/user_del/{{u.id}}">{{"删除"}}</a>
         </td>
     </tr>
     {% endfor %}
