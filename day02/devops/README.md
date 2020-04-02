@@ -207,7 +207,7 @@ cat  hello/templates/index.html
 
 #### 用户列表
 
-![image-20200402112854120](/Users/hao/Library/Application Support/typora-user-images/image-20200402112854120.png ) 
+![image-20200402112854120](https://github.com/MagePY27/P27N32-SunHao/blob/master/day02/devops/static/img/image-20200402112854120.png ) 
 
 #### 添加用户
 
