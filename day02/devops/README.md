@@ -76,7 +76,7 @@ def user_edit(request, u_id):
         print(QueryDict(request.body).dict())
         data = QueryDict(request.body).dict()
         u.update(**data)
-	return redirect("http://127.0.0.1:8000/hello/user_list/")	#修改完后返回用户列表界面
+	return redirect("/hello/user_list/")	#修改完后返回用户列表界面
       
     return render(request, 'hello/useredit.html', {"user": u})
     
@@ -88,7 +88,7 @@ def user_del(request, u_id):
     if request.POST.get('delete') == "True":
         print(request.POST.get('delete'))
         u.delete()
-        return redirect("http://127.0.0.1:8000/hello/user_list/")  #删除后返回用户列表界面
+        return redirect("/hello/user_list/")  #删除后返回用户列表界面
 
     return render(request, 'hello/userdel.html', {"user": u})
 ```
