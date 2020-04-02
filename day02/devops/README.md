@@ -213,41 +213,41 @@ cat  hello/templates/index.html
 
 > 点击添加用户
 
-![image-20200402113006952](/Users/hao/Library/Application Support/typora-user-images/image-20200402113006952.png)	
+![image-20200402113006952](https://github.com/MagePY27/P27N32-SunHao/blob/master/day02/devops/static/img/image-20200402113006952.png)	
 
 > 填写用户信息
 
-![image-20200402113421423](/Users/hao/Library/Application Support/typora-user-images/image-20200402113421423.png)	
+![image-20200402113421423](https://github.com/MagePY27/P27N32-SunHao/blob/master/day02/devops/static/img/image-20200402113421423.png)	
 
 > 提交信息，返回用户界面可以看到新添加的用户
 
-![image-20200402113455397](/Users/hao/Library/Application Support/typora-user-images/image-20200402113455397.png)		
+![image-20200402113455397](https://github.com/MagePY27/P27N32-SunHao/blob/master/day02/devops/static/img/image-20200402113455397.png)		
 
 #### 编辑用户
 
 > 点击编辑
 
-![image-20200402113558206](/Users/hao/Library/Application Support/typora-user-images/image-20200402113558206.png)	
+![image-20200402113558206](https://github.com/MagePY27/P27N32-SunHao/blob/master/day02/devops/static/img/image-20200402113558206.png)	
 
 > 修改年龄为33岁，并将性别改为女	
 
-![image-20200402113643671](/Users/hao/Library/Application Support/typora-user-images/image-20200402113643671.png)	
+![image-20200402113643671](https://github.com/MagePY27/P27N32-SunHao/blob/master/day02/devops/static/img/image-20200402113643671.png)	
 
 > 提交修改，返回用户列表，看到修改结果	
 
-![image-20200402113717322](/Users/hao/Library/Application Support/typora-user-images/image-20200402113717322.png)		
+![image-20200402113717322](https://github.com/MagePY27/P27N32-SunHao/blob/master/day02/devops/static/img/image-20200402113717322.png)		
 
 #### 删除用户
 
 > 点击删除
 
-![image-20200402114324096](/Users/hao/Library/Application Support/typora-user-images/image-20200402114324096.png)	
+![image-20200402114324096](https://github.com/MagePY27/P27N32-SunHao/blob/master/day02/devops/static/img/image-20200402114324096.png)	
 
 > 删除确认，点击是并提交
 
-![image-20200402114545284](/Users/hao/Library/Application Support/typora-user-images/image-20200402114545284.png)	
+![image-20200402114545284](https://github.com/MagePY27/P27N32-SunHao/blob/master/day02/devops/static/img/image-20200402114545284.png)	
 
 > 此时看到用户界面此用户已被删除
 
-![image-20200402115044673](/Users/hao/Library/Application Support/typora-user-images/image-20200402115044673.png)		
+![image-20200402115044673](https://github.com/MagePY27/P27N32-SunHao/blob/master/day02/devops/static/img/image-20200402115044673.png)		
 
