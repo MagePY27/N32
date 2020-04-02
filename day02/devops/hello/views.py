@@ -4,6 +4,50 @@ from hello.models import User
 import datetime
 
 
+def user_list(request):
+    users = User.objects.all()
+    return render(request, 'hello/userlist.html', {'users': users})
+
+
+def user_add(request):
+    u = User.objects
+    try:
+        if request.method == 'POST':
+            # print(QueryDict(request.body).dict())
+            data = QueryDict(request.body).dict()
+            u.get_or_create(**data)
+    except:
+        return HttpResponse('此用户已存在')
+
+    return render(request,'hello/useradd.html')
+
+
+def user_edit(request, u_id):
+    u = User.objects.get(id=u_id)
+    # print(u.user, u.name, u.age)
+
+    if request.method == "POST":
+        u = User.objects.filter(id=u_id)
+        print(QueryDict(request.body).dict())
+        data = QueryDict(request.body).dict()
+        u.update(**data)
+        return render(request, 'hello/userlist.html', {"users": User.objects.all()})
+
+    return render(request, 'hello/useredit.html', {"user": u})
+
+
+def user_del(request, u_id):
+    u = User.objects.get(id=u_id)
+
+    if request.POST.get('delete') == "True":
+        print(request.POST.get('delete'))
+        u.delete()
+        # return HttpResponse("delete user {}".format(u))
+        return render(request, 'hello/userlist.html', {"users": User.objects.all()})
+
+    return render(request, 'hello/userdel.html', {"user": u})
+
+
 # def index(request):
     # return HttpResponse("<p>Hello World, Hello, Django</p>")
 
@@ -37,57 +81,14 @@ import datetime
 #     return HttpResponse("year is %s, month is %s" % (year, month))
 
 
-def index(request):
-    classname = "DevOps"
-    books = ['Python', 'Java', 'Django']
-    user = {'name':'kk', 'age':18}
-    userlist = [{'name':'kk','age':18},{'name':'rock', 'age':19},{'name':'mage', 'age':20}]
-    messages = "ab"
-    val = [2018,'abc','ww22']
-    value = datetime.datetime.now()
-    return render(request, 'hello/hello.html', {'classname': classname, "books": books, "user": user, "userlist": userlist,
-                                                "messages": messages, "val":val, "value": value})
+# def index(request):
+#     classname = "DevOps"
+#     books = ['Python', 'Java', 'Django']
+#     user = {'name':'kk', 'age':18}
+#     userlist = [{'name':'kk','age':18},{'name':'rock', 'age':19},{'name':'mage', 'age':20}]
+#     messages = "ab"
+#     val = [2018,'abc','ww22']
+#     value = datetime.datetime.now()
+#     return render(request, 'hello/hello.html', {'classname': classname, "books": books, "user": user, "userlist": userlist,
+#                                                 "messages": messages, "val":val, "value": value})
 
-
-def user_list(request):
-    users = User.objects.all()
-    return render(request, 'hello/index.html', {'users': users})
-
-
-def user_add(request):
-    u = User.objects
-    try:
-        if request.method == 'POST':
-            # print(QueryDict(request.body).dict())
-            data = QueryDict(request.body).dict()
-            u.get_or_create(**data)
-    except:
-        return HttpResponse('此用户已存在')
-
-    return render(request,'hello/useradd.html')
-
-
-def user_edit(request, u_id):
-    u = User.objects.get(id=u_id)
-    print(u.user, u.name, u.age)
-
-    if request.method == "POST":
-        u = User.objects.filter(id=u_id)
-        print(QueryDict(request.body).dict())
-        data = QueryDict(request.body).dict()
-        u.update(**data)
-        # return render(request , 'hello/index.html' , {"users" : User.objects.all()})
-
-    return render(request, 'hello/useredit.html', {"user": u})
-
-
-def user_del(request, u_id):
-    u = User.objects.get(id=u_id)
-
-    if request.POST.get('delete') == "True":
-        print(request.POST.get('delete'))
-        u.delete()
-        # return HttpResponse("delete user {}".format(u))
-        return render(request, 'hello/index.html', {"users": User.objects.all()})
-
-    return render(request, 'hello/userdel.html', {"user": u})

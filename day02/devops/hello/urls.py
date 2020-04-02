@@ -2,7 +2,7 @@ from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    # path('', views.index, name='index'),
     # path('hello/', views.index, name='index')
     # re_path('([0-9]{4})/([0-9]{2})/', views.re_index, name='re_index'),
     # re_path('(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/', views.re_index, name='re_index')
