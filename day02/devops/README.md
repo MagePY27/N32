@@ -150,7 +150,12 @@ cat  hello/templates/index.html
 密码：<input type="password" name="password" minlength="6"/><br />
 姓名：<input type="text" name="name" /><br />
 年龄：<input type="number" name="age" min="0"/><br />
-性别：<input type="radio" name="sex" value="0">男 <input type="radio" name="sex" value="1">女<br />
+性别：
+    {% if user.sex %}
+        <input type="radio" name="sex" value="0" >男 <input type="radio" name="sex" value="1" checked>女
+    {% else %}
+        <input type="radio" name="sex" value="0" checked>男 <input type="radio" name="sex" value="1" >女
+    {% endif %}<br />
 <input type="submit" value="Submit">
 <!--<a href="{{name}}" class="a_post">提交</a>-->
 </form>
