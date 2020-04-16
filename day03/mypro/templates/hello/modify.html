@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑用户</title>
+</head>
+<body>
+{% if msg.code == 0 %}
+    <p style="color:green"> {{ msg.result }}</p>
+{% else %}
+    <p style="color:red">{{ msg.errmsg }}</p>
+{% endif %}
+
+<form method="post" action="">
+    用户:
+    <input type="text" name="user" value="{{ user.user }}">
+    <br>
+    姓名:
+    <input type="text" name="name" value="{{ user.name }}">
+    <br>
+    密码:
+    <input type="password" name="password" value="{{ user.password }}">
+    <br>
+    年龄:
+    <input type="number" name="age" value="{{ user.age }}">
+    <br>
+    性别:
+    {% if user.sex == 0 %}
+        <input type="radio" name="sex" value="0" checked> 男
+        <input type="radio" name="sex" value="1"> 女
+    {% else %}
+        <input type="radio" name="sex" value="0" > 男
+        <input type="radio" name="sex" value="1" checked> 女
+    {% endif %}
+    <br>
+    <input type="submit" value="保存" name="_save">
+    <input type="submit" value="保存并继续编辑" name="_continue">
+
+{% if messages %}
+<ul>
+{% for message in messages %}
+<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+</form>
+
+
+</body>
+</html>
