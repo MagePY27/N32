@@ -150,7 +150,12 @@ cat  hello/templates/index.html
 密码：<input type="password" name="password" minlength="6"/><br />
 姓名：<input type="text" name="name" /><br />
 年龄：<input type="number" name="age" min="0"/><br />
-性别：<input type="radio" name="sex" value="0">男 <input type="radio" name="sex" value="1">女<br />
+性别：
+    {% if user.sex %}
+        <input type="radio" name="sex" value="0" >男 <input type="radio" name="sex" value="1" checked>女
+    {% else %}
+        <input type="radio" name="sex" value="0" checked>男 <input type="radio" name="sex" value="1" >女
+    {% endif %}<br />
 <input type="submit" value="Submit">
 <!--<a href="{{name}}" class="a_post">提交</a>-->
 </form>
@@ -207,7 +212,7 @@ cat  hello/templates/index.html
 
 #### 用户列表
 
-![image-20200402112854120](https://s1.ax1x.com/2020/04/02/GJpsMD.png) 
+![image-20200402112505261.png](https://i.loli.net/2020/04/02/6cjRsOpnMtNyb9l.png) 
 
 #### 添加用户
 
